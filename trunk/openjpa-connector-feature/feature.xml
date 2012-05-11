@@ -2,7 +2,7 @@
 <feature
       id="com.googlecode.m2e.connectors.openjpa.feature"
       label="m2e connector for openjpa"
-      version="1.0.0.20120131"
+      version="1.0.1.20120511"
       provider-name="Callista Enterprise AB">
 
    <description>
