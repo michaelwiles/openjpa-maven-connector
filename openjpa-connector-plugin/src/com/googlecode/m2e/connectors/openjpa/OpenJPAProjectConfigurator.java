@@ -8,7 +8,10 @@
 
 package com.googlecode.m2e.connectors.openjpa;
 
+import java.io.File;
+
 import org.apache.maven.plugin.MojoExecution;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.m2e.core.lifecyclemapping.model.IPluginExecutionMetadata;
 import org.eclipse.m2e.core.project.IMavenProjectFacade;
 import org.eclipse.m2e.core.project.configurator.AbstractBuildParticipant;
@@ -19,4 +22,14 @@ public class OpenJPAProjectConfigurator extends AbstractJavaProjectConfigurator 
     public AbstractBuildParticipant getBuildParticipant(IMavenProjectFacade projectFacade, MojoExecution execution, IPluginExecutionMetadata executionMetadata) {
         return new OpenJPABuildParticipant(execution);
     }
+	
+    @Override
+    protected IPath getFullPath( IMavenProjectFacade facade, File file ) {
+        if(file != null) {
+            return super.getFullPath(facade, file);
+        } else {
+           return null;
+        }
+    }
+
 }
